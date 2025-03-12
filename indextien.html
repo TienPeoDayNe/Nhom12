@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lê Trung Tiến - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Thêm một số style inline để đảm bảo style sẽ được áp dụng */
+        :root {
+            --primary-color: #8a6abf;
+            --secondary-color: #2d1b4e;
+            --accent-color: #4fd1c5;
+            --bg-dark: rgba(42,31,70,0.9);
+        }
+        
+        .glass-effect {
+            background: rgba(42,31,70,0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .animated-gradient {
+            background: linear-gradient(-45deg, #8a6abf, #4fd1c5, #3a2f6d, #6e48aa);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .skill-progress {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress-bar {
+            height: 100%;
+            border-radius: 4px;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-poppins text-gray-200 bg-gradient-to-br from-[#2d1b4e] via-[#3a2f6d] to-[#2e6b5e] min-h-screen overflow-x-hidden">
+    
+    <!-- Animated background elements -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-500 filter blur-[150px] opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-teal-500 filter blur-[150px] opacity-20 animate-pulse" style="animation-delay: 2s"></div>
+    </div>
+    
+    <!-- Main content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 py-10">
+        <!-- Navbar -->
+        <nav class="glass-effect flex justify-between items-center rounded-2xl mb-12 py-4 px-6 sticky top-4 z-50 shadow-lg">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]">LTT</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-[#8a6abf] transition-colors font-medium">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-[#8a6abf] transition-colors font-medium">Skills</a>
+                <a href="#experience" class="text-gray-300 hover:text-[#8a6abf] transition-colors font-medium">Experience</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-[#8a6abf] transition-colors font-medium">Portfolio</a>
+                <a href="#contact" class="text-gray-300 hover:text-[#8a6abf] transition-colors font-medium">Contact</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+
+        <!-- Header -->
+        <header class="glass-effect rounded-3xl p-10 mb-10 shadow-xl" id="about">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 rounded-full animated-gradient -m-2"></div>
+                        <img src="Tien.jpg" alt="Lê Trung Tiến" class="profile-photo relative w-56 h-56 rounded-full object-cover border-4 border-white">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 md:pl-12">
+                    <h1 class="profile-name text-4xl md:text-5xl font-bold text-white mb-2">Lê Trung Tiến</h1>
+                    <div class="flex items-center mt-2 mb-4">
+                        <span class="px-4 py-1 rounded-full bg-[rgba(90,74,133,0.3)] text-[#4fd1c5] text-sm font-medium">Front-End Developer</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Hi there! I'm a dynamic developer and designer with a knack for creating captivating digital experiences. My toolkit includes modern frameworks like React.js, and I'm all about bridging aesthetics with functionality.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#contact" class="px-6 py-3 rounded-full bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5] text-white font-medium transition-transform hover:scale-105">Contact Me</a>
+                        <a href="#portfolio" class="px-6 py-3 rounded-full border border-[#8a6abf] text-white font-medium transition-transform hover:scale-105">View Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About -->
+        <section class="glass-effect rounded-3xl p-10 mb-10 shadow-xl" id="about-me">
+            <h2 class="text-3xl font-bold text-white mb-8 relative pb-3 inline-block">
+                About Me
+                <span class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-effect p-6 rounded-xl hover:shadow-lg transition-all">
+                    <div class="text-[#4fd1c5] text-3xl mb-4">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Developer</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Building responsive web applications with React.js, Vue.js and modern web technologies.
+                    </p>
+                </div>
+                <div class="glass-effect p-6 rounded-xl hover:shadow-lg transition-all">
+                    <div class="text-[#4fd1c5] text-3xl mb-4">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Designer</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Creating beautiful and intuitive user interfaces with Figma and modern design principles.
+                    </p>
+                </div>
+                <div class="glass-effect p-6 rounded-xl hover:shadow-lg transition-all">
+                    <div class="text-[#4fd1c5] text-3xl mb-4">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Cloud Services</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Deploying and managing applications using AWS cloud services.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8">
+                <p class="text-gray-300 leading-relaxed">
+                    Fueled by creativity, caffeinated by coffee, and inspired by coding under the stars, I turn ideas into reality with passion and precision. Whether it's designing sleek interfaces or building seamless web applications, I thrive on delivering solutions that leave a mark.
+                </p>
+                <p class="text-gray-300 leading-relaxed mt-4">
+                    Let's craft something extraordinary together!
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="glass-effect rounded-3xl p-10 mb-10 shadow-xl" id="skills">
+            <h2 class="text-3xl font-bold text-white mb-8 relative pb-3 inline-block">
+                Skills
+                <span class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">React</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Vue.js</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Python</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Figma</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">AWS</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">UI/UX Design</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education -->
+        <section class="glass-effect rounded-3xl p-10 mb-10 shadow-xl" id="experience">
+            <h2 class="text-3xl font-bold text-white mb-8 relative pb-3 inline-block">
+                Experience & Education
+                <span class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Experience Timeline -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 text-[#4fd1c5]">Work Experience</h3>
+                    <div class="relative border-l-2 border-[#8a6abf] pl-6 pb-6">
+                        <div class="absolute w-4 h-4 bg-[#4fd1c5] rounded-full -left-[9px] top-0"></div>
+                        <div class="mb-10">
+                            <div class="text-sm text-[#4fd1c5] mb-1">2021 - Present</div>
+                            <h4 class="text-lg font-medium mb-2">Lead Developer</h4>
+                            <p class="text-gray-400 mb-2">DreamLabs</p>
+                            <p class="text-gray-300">Leading front-end development team, architecting solutions, and mentoring junior developers.</p>
+                        </div>
+                        
+                        <div class="absolute w-4 h-4 bg-[#4fd1c5] rounded-full -left-[9px] top-[120px]"></div>
+                        <div class="mb-10">
+                            <div class="text-sm text-[#4fd1c5] mb-1">2018 - 2021</div>
+                            <h4 class="text-lg font-medium mb-2">Freelance Designer</h4>
+                            <p class="text-gray-400 mb-2">Self-employed</p>
+                            <p class="text-gray-300">Designed and developed web solutions for various clients across multiple industries.</p>
+                        </div>
+                        
+                        <div class="absolute w-4 h-4 bg-[#4fd1c5] rounded-full -left-[9px] top-[240px]"></div>
+                        <div>
+                            <div class="text-sm text-[#4fd1c5] mb-1">2017 - 2018</div>
+                            <h4 class="text-lg font-medium mb-2">Intern</h4>
+                            <p class="text-gray-400 mb-2">CodeWave</p>
+                            <p class="text-gray-300">Assisted in developing web applications and gained hands-on experience with modern frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Timeline -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 text-[#4fd1c5]">Education</h3>
+                    <div class="relative border-l-2 border-[#8a6abf] pl-6 pb-6">
+                        <div class="absolute w-4 h-4 bg-[#4fd1c5] rounded-full -left-[9px] top-0"></div>
+                        <div class="mb-10">
+                            <div class="text-sm text-[#4fd1c5] mb-1">2018 - 2020</div>
+                            <h4 class="text-lg font-medium mb-2">M.S. in Computer Science</h4>
+                            <p class="text-gray-400 mb-2">Tech University</p>
+                            <p class="text-gray-300">Specialized in Human-Computer Interaction and Web Technologies.</p>
+                        </div>
+                        
+                        <div class="absolute w-4 h-4 bg-[#4fd1c5] rounded-full -left-[9px] top-[120px]"></div>
+                        <div class="mb-10">
+                            <div class="text-sm text-[#4fd1c5] mb-1">2014 - 2018</div>
+                            <h4 class="text-lg font-medium mb-2">B.A. in Graphic Design</h4>
+                            <p class="text-gray-400 mb-2">Art Institute</p>
+                            <p class="text-gray-300">Focused on digital media design and interactive experiences.</p>
+                        </div>
+                        
+                        <div class="absolute w-4 h-4 bg-[#4fd1c5] rounded-full -left-[9px] top-[240px]"></div>
+                        <div>
+                            <h4 class="text-lg font-medium mb-2">Certifications & Courses</h4>
+                            <ul class="list-disc text-gray-300 ml-4 space-y-1">
+                                <li>Data Structures & Algorithms (Coursera)</li>
+                                <li>Advanced UI/UX Design (Udemy)</li>
+                                <li>Machine Learning Basics (edX)</li>
+                                <li>Cloud Computing with AWS (AWS Training)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="glass-effect rounded-3xl p-10 mb-10 shadow-xl" id="portfolio">
+            <h2 class="text-3xl font-bold text-white mb-8 relative pb-3 inline-block">
+                Portfolio
+                <span class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group portfolio-item glass-effect rounded-xl overflow-hidden transition-all">
+                    <div class="relative overflow-hidden">
+                        <img src="https://via.placeholder.com/600x400" alt="Travel Blog Platform" class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[rgba(42,31,70,0.9)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <div class="flex gap-3 mb-3">
+                                    <span class="px-3 py-1 bg-[rgba(90,74,133,0.6)] rounded-full text-xs">React</span>
+                                    <span class="px-3 py-1 bg-[rgba(90,74,133,0.6)] rounded-full text-xs">Node.js</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-white">Travel Blog Platform</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Travel Blog Platform</h3>
+                        <p class="text-gray-300 mb-4">A full-stack application for travel enthusiasts to share their experiences.</p>
+                        <a href="#" class="text-[#4fd1c5] hover:underline">View Project →</a>
+                    </div>
+                </div>
+                
+                <div class="group portfolio-item glass-effect rounded-xl overflow-hidden transition-all">
+                    <div class="relative overflow-hidden">
+                        <img src="https://via.placeholder.com/600x400" alt="Photo Editing App" class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[rgba(42,31,70,0.9)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <div class="flex gap-3 mb-3">
+                                    <span class="px-3 py-1 bg-[rgba(90,74,133,0.6)] rounded-full text-xs">Vue.js</span>
+                                    <span class="px-3 py-1 bg-[rgba(90,74,133,0.6)] rounded-full text-xs">Canvas API</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-white">Photo Editing App</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Photo Editing App</h3>
+                        <p class="text-gray-300 mb-4">A browser-based photo editor with filters, adjustments, and social sharing.</p>
+                        <a href="#" class="text-[#4fd1c5] hover:underline">View Project →</a>
+                    </div>
+                </div>
+                
+                <div class="group portfolio-item glass-effect rounded-xl overflow-hidden transition-all">
+                    <div class="relative overflow-hidden">
+                        <img src="https://via.placeholder.com/600x400" alt="E-Learning Dashboard" class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[rgba(42,31,70,0.9)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <div class="flex gap-3 mb-3">
+                                    <span class="px-3 py-1 bg-[rgba(90,74,133,0.6)] rounded-full text-xs">React</span>
+                                    <span class="px-3 py-1 bg-[rgba(90,74,133,0.6)] rounded-full text-xs">AWS</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-white">E-Learning Dashboard</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Learning Dashboard</h3>
+                        <p class="text-gray-300 mb-4">An interactive learning platform with progress tracking and analytics.</p>
+                        <a href="#" class="text-[#4fd1c5] hover:underline">View Project →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block px-8 py-3 rounded-full border border-[#8a6abf] text-white font-medium transition-transform hover:scale-105">View All Projects</a>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="glass-effect rounded-3xl p-10 mb-10 shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-8 relative pb-3 inline-block">
+                Testimonials
+                <span class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-effect p-6 rounded-xl relative">
+                    <div class="text-[#8a6abf] text-6xl absolute opacity-20 top-4 left-4">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-gray-300 italic mb-6">Tiến's creativity and technical skills are unmatched! Working with him was a pleasure, and the results exceeded our expectations.</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-[#8a6abf] flex items-center justify-center text-white font-bold mr-4">SK</div>
+                            <div>
+                                <h4 class="font-semibold">Sarah K.</h4>
+                                <p class="text-gray-400 text-sm">Marketing Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-effect p-6 rounded-xl relative">
+                    <div class="text-[#8a6abf] text-6xl absolute opacity-20 top-4 left-4">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-gray-300 italic mb-6">A joy to work with, always delivers beyond expectations. Tiến has a unique ability to understand exactly what we need and translate it into beautiful code.</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-[#8a6abf] flex items-center justify-center text-white font-bold mr-4">ML</div>
+                            <div>
+                                <h4 class="font-semibold">Minh L.</h4>
+                                <p class="text-gray-400 text-sm">Tech Startup Founder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="glass-effect rounded-3xl p-10 mb-10 shadow-xl" id="contact">
+            <h2 class="text-3xl font-bold text-white mb-8 relative pb-3 inline-block">
+                Contact Me
+                <span class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-[#8a6abf] to-[#4fd1c5]"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div>
+                    <p class="text-gray-300 mb-6">I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-[rgba(90,74,133,0.3)] flex items-center justify-center text-[#4fd1c5] mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a href="mailto:tien.le@example.com" class="text-gray-300 hover:text-[#4fd1c5] transition-colors">tien.le@example.com</a>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-[rgba(90,74,133,0.3)] flex items-center justify-center text-[#4fd1c5] mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="text-gray-300">Vietnam</span>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-[rgba(90,74,133,0.3)] flex items-center justify-center text-[#4fd1c5] mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <span class="text-gray-300">Available on request</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/tienle" target="_blank" class="w-12 h-12 rounded-full bg-[rgba(90,74,133,0.3)] flex items-center justify-center text-[#4fd1c5] hover:bg-[#4fd1c5] hover:text-[#2d1b4e] transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/tienle" target="_blank" class="w-12 h-12 rounded-full bg-[rgba(90,74,133,0.3)] flex items-center justify-center text-[#4fd1c5] hover:bg-[#4fd1c5] hover:text-[#2d1b4e] transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/tienle" target="_blank" class="w-12 h-12 rounded-full bg-[rgba(90,74,133,0.3)] flex items-center justify-center text-[#4fd1c5] hover:bg-[#4fd1c5] hover:text-[#2d1b4e] transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/tienle" target="_blank" class="w-12 h-12 rounded-full bg-[rgba(90,74,133,0.3)] flex items-center justify-center text-[#4fd1c5] hover:bg-[#4fd1c5] hover:text-[#2d1b4e] transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
