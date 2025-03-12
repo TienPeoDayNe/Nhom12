@@ -1,0 +1,145 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #E6D5BF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+/* Phần Header */
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    background: #F8F1EB;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right img {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Phần Giới Thiệu */
+.about-section {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.about-left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.about-left img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.about-right {
+    width: 60%;
+    padding-left: 20px;
+}
+
+.experience {
+    margin: 20px 0;
+}
+
+.exp-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #5C4B43;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Phần Công Việc */
+.work-section {
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 50px;
+    background-color: #D6C4AE;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.work-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.work-item {
+    width: 30%;
+    text-align: center;
+}
+
+.work-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.work-item img:hover {
+    border-color: #6B4E37;
+    transform: scale(1.05);
+}
+
+/* Phần Thông Tin Liên Hệ */
+.contact-section {
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 50px;
+    text-align: left;
+    padding: 40px;
+    background-color: #F8F1EB;
+    border-radius: 10px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: #5C4B43;
+}
+
+.contact-logo {
+    font-size: 30px;
+    text-align: left;
+    margin-top: 20px;
+    color: #4D3A32;
+}
